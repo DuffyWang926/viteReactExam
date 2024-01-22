@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import _ from 'lodash';
+import { get } from '@/utils/request'
 
 // 异步 actions
 export const getList = createAsyncThunk('article/getList',
@@ -12,7 +13,8 @@ export const getList = createAsyncThunk('article/getList',
         });
 
         try {
-            var [res] = await Promise.all([promise]);
+            // var [res] = await Promise.all([promise]);
+            get('/test')
         } catch (error) {
             console.error(error);
         }

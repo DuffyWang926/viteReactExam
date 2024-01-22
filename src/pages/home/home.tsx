@@ -18,7 +18,7 @@ function Home() {
 
   useEffect(() => {
     // 监听 counter 变化
-    console.log(counter);
+    console.log('useEffect',counter);
     dispatch(getList({ currentPage: 2, pageSize: 10}) as unknown as AnyAction);
 }, [])
 
