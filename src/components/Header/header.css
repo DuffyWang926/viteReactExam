@@ -1,0 +1,10 @@
+
+.header{
+    display: flex;
+    .logo{
+        flex:1;
+    }
+    .user{
+        font-weight: 500;
+    }
+}

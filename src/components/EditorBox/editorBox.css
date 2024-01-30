@@ -1,0 +1,41 @@
+.editorWrapper{
+    position: absolute;
+    .editorBox{
+        position:absolute;
+        
+    }
+    .changeBox{
+        position: absolute;
+        left:0;
+        top:0;
+        .changeTop{
+            border-top:1px solid #333;
+            cursor: ns-resize;
+            padding-bottom:5px;
+        }
+        .changeFoot{
+            position: absolute;
+            left:0;
+            border-top:1px solid #333;
+            cursor: ns-resize;
+            padding-top:5px;
+        }
+        .changeLeft{
+            position: absolute;
+            left:0;
+            top:0;
+            border-left:1px solid #333;
+            cursor: ew-resize;
+            padding-right:5px;
+        }
+        .changeRight{
+            position: absolute;
+            top:0;
+            right:0;
+            border-right:1px solid #333;
+            cursor: ew-resize;
+            padding-left:5px;
+        }
+        
+    }
+}

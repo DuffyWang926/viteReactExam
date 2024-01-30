@@ -4,7 +4,10 @@ function Header() {
 
   return (
     <>
-      <div>head</div>
+      <div className='header'>
+        <div className='logo'></div>
+        <div className='user'>user</div>
+      </div>
     </>
   )
 }

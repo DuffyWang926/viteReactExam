@@ -1,4 +1,5 @@
 import home from './home'
+import editor from './editor'
 import about from './about'
 import article from './article'
 // export { default as home } from './home'
@@ -8,6 +9,7 @@ import article from './article'
 export {
     home,
     about,
-    article
+    article,
+    editor,
 
 }
