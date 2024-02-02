@@ -22,22 +22,25 @@ const Editor: React.FC = () => {
 
   const [{ canDrop, isOver }, drop] = useDrop({
     accept: 'box',
-    // drop: () => ({ name: 'DropTarget' } as DropItem),
     drop: (item: DropItem, monitor: DropTargetMonitor) => {
       const dropTargetElement = item.ref.current;
-      const clientOffset = monitor.getClientOffset();
+      const targetOffset = monitor.getSourceClientOffset();
+      const targetNode = ref.current
 
-      if (dropTargetElement && clientOffset) {
+      if (dropTargetElement && targetNode && targetOffset  ) {
         const { width, height } = dropTargetElement.getBoundingClientRect();
-        console.log(`editor Element width: ${width}, height: ${height}`);
-        console.log(`editor item`, item);
+        let targetPostion = targetNode.getBoundingClientRect()
+        let positionX = targetOffset.x - targetPostion.left
+        let positionY = targetOffset.y - targetPostion.top
         let temp = {
           name:item.name,
           id:item.id,
-          location:[clientOffset.x, clientOffset.y],
-          size:[width, height]
+          location:[positionX, positionY],
+          size:[width, height],
+          content:'',
         }
         dispatch(updateContentList(temp) );
+        
 
       }
       return { name: 'DropTarget', type: 'box' };
@@ -50,9 +53,10 @@ const Editor: React.FC = () => {
   useEffect(() => {
       const dropTargetElement = ref.current;
       if( dropTargetElement){
-        const { width, height } = dropTargetElement.getBoundingClientRect();
+        let targetPostion = dropTargetElement.getBoundingClientRect()
+        const { width, height } = targetPostion
         console.log(`editor Element width: ${width}, height: ${height}`);
-        dispatch(updateState({ contentWidth:width}) );
+        dispatch(updateState({ contentWidth:width, editorLeft:targetPostion.left, editorTop:targetPostion.top}) );
       }
   }, [])
 

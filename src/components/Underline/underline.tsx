@@ -5,7 +5,6 @@ interface UnderlineProps {
   size?:number[];
 }
 const Underline: React.FC<UnderlineProps> = ({ content, id, size }) => {
-  console.log('size', size)
   if(!content){
     content = '下划线'
   }

@@ -3,17 +3,13 @@ import Header from '@/components/Header/header'
 import Folder from '@/components/Folder/folder'
 import ExerciseList from '@/components/ExerciseList/exerciseList'
 import Editor from '@/components/Editor/editor'
+import ApiData from '@/components/ApiData/apiData'
 import ComponentBox from '@/components/ComponentBox/componentBox'
 import { useSelector, useDispatch } from 'react-redux';
-// import { setCounter } from '@/store/modules/about';
 import React, { useEffect, useState } from 'react';
-import { getList } from "@/store/modules/article";
 import _ from 'lodash';
-import type { AnyAction } from "@reduxjs/toolkit";
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
-import {Box} from '@/components/DragTest/dragBox'
-import {DropTarget} from '@/components/DragTarget/dragTarget'
 
 function Home() {
 
@@ -44,6 +40,7 @@ function Home() {
           < ComponentBox /> 
         </DndProvider>
       </div>
+      < ApiData />
     </div >
   )
 }

@@ -1,34 +1,34 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export interface AboutState {
-  counter: number;
+export interface HomeState {
+  isComponentList: boolean;
   title: string
 }
 
-const initialState: AboutState = {
-  counter: 0,
+const initialState: HomeState = {
+  isComponentList:true,
   title: "redux toolkit pre"
 };
 
 // 创建一个 Slice
-export const about = createSlice({
+export const home = createSlice({
   // 命名空间
-  name: 'about',
+  name: 'home',
 
   // 初始化状态值
   initialState,
 
   // 定义 reducers 并生成关联的操作
   reducers: {
-    setCounter(state, { payload }){
+    changeIsComponentList(state, { payload }){
       console.log(payload);
-      state.counter = payload.counter;
+      state.isComponentList = payload.counter;
     }
   },
 });
 
 // 导出 reducers 方法
-export const { setCounter } = about.actions;
+export const { changeIsComponentList } = home.actions;
 
 // 默认导出
-export default about.reducer;
+export default home.reducer;

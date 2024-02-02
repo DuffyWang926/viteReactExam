@@ -2,21 +2,22 @@
     position: absolute;
     .editorBox{
         position:absolute;
-        
+        overflow: hidden;
     }
     .changeBox{
         position: absolute;
         left:0;
         top:0;
         .changeTop{
-            border-top:1px solid #333;
+            border-top:1px solid #1116a2;
             cursor: ns-resize;
             padding-bottom:5px;
+            padding-top:5px;
         }
         .changeFoot{
             position: absolute;
             left:0;
-            border-top:1px solid #333;
+            border-bottom:1px solid #1116a2;
             cursor: ns-resize;
             padding-top:5px;
         }
@@ -24,7 +25,7 @@
             position: absolute;
             left:0;
             top:0;
-            border-left:1px solid #333;
+            border-left:1px solid #1116a2;
             cursor: ew-resize;
             padding-right:5px;
         }
@@ -32,7 +33,7 @@
             position: absolute;
             top:0;
             right:0;
-            border-right:1px solid #333;
+            border-right:1px solid #1116a2;
             cursor: ew-resize;
             padding-left:5px;
         }

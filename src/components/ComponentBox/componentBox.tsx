@@ -1,13 +1,19 @@
 import './componentBox.css'
 import ComponentList from '@/components/ComponentList/componentList'
 import ComponentEditor from '@/components/ComponentEditor/componentEditor'
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+
 function ComponentBox() {
-  let isList = true
+  const { isComponentList } = useSelector((store: any) => store.home);
+  const {  tempComponent } = useSelector((store: any) => store.editor);
+  console.log('tempComponent')
+  // useEffect
 
   return (
     <div className='componentBox'>
       {
-        isList ? < ComponentList/> : < ComponentEditor />
+        isComponentList ? < ComponentList/> : < ComponentEditor item={tempComponent}/>
       }
 
     </div>
